@@ -35,6 +35,8 @@ VOLUME /var/lib/mysql
 
 COPY docker-entrypoint.sh /
 
+RUN apt-get purge -y bison cmake g++ gcc git libaio-dev libncurses5-dev libreadline-dev make
+
 ENTRYPOINT ["/docker-entrypoint.sh"]
 
 EXPOSE 3306
